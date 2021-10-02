@@ -6,6 +6,7 @@
 if game.CoreGui:FindFirstChild("ChlorixUI") then
    game.CoreGui:FindFirstChild("ChlorixUI"):Destroy()
 end
+_G.Prefix = "-" -- chat commands prefix
 local library = {}
 
 function library:CreateMain()
@@ -318,6 +319,16 @@ function library:CreateMain()
            PenumbraShadow.ImageTransparency = 0.800
            PenumbraShadow.ScaleType = Enum.ScaleType.Slice
            PenumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+           game.Players.LocalPlayer.Chatted:Connect(function(msg)
+            cmd = string.gsub(name," ","")
+            cmd = cmd:lower()
+            if msg:lower() == _G.Prefix..cmd then
+                spawn(function()
+                    callback()
+                end)
+            end
+           end)
        end
        return elementhandler
    end
@@ -666,7 +677,9 @@ end
 end
 local window = library:CreateMain()
 local anims = window:CreateTab("Animations")
-
+local b = window:CreateTab("Scripts")
+local c = window:CreateTab("Hat Scripts")
+local d = window:CreateTab("Misc")
 anims:CreateButton("Billy Bounce", function()
 reanim()
 playid("3381474830")
@@ -722,4 +735,81 @@ end)
 anims:CreateButton("Engineer", function()
    reanim()
    playid("4677980227")
+end)
+-- 10/2/2021 new added animations.
+anims:CreateButton("Electro Shuffle", function()
+    reanim()
+    playid("3619935462")
+ end)
+ anims:CreateButton("Soldier", function()
+    reanim()
+    playid("4787449997")
+ end)
+ anims:CreateButton("Floss", function()
+    reanim()
+    playid("4812941481")
+ end)
+ anims:CreateButton("Shuffle", function()
+    reanim()
+    playid("3485013176")
+ end)
+ anims:CreateButton("Blowjob", function()
+    reanim()
+    playid("4963373273")
+ end)
+ anims:CreateButton("Bang", function()
+    reanim()
+    playid("4966879039")
+ end)
+ anims:CreateButton("Pushups", function()
+    reanim()
+    playid("4966881089")
+ end)
+ anims:CreateButton("Bend over", function()
+    reanim()
+    playid("4966882047")
+ end)
+ anims:CreateButton("Rewind", function()
+    reanim()
+    playid("5011408603")
+ end)
+ anims:CreateButton("Aerostep", function()
+    reanim()
+    playid("4776588732")
+ end)
+ anims:CreateButton("Thriller", function()
+    reanim()
+    playid("4846220052")
+ end)
+ anims:CreateButton("Thriller 2.0", function()
+    reanim()
+    playid("4699820365")
+ end)
+ anims:CreateButton("Goopie", function()
+    reanim()
+    playid("5238669868")
+ end)
+ anims:CreateButton("Skibidi", function()
+    reanim()
+    playid("4835795413")
+ end)
+ anims:CreateButton("Carson Shearer", function()
+    reanim()
+    playid("5806573931")
+ end)
+-- real
+d:CreateButton("Fast Reset", function()
+    local spawn = game.Players.RespawnTime + 0.2
+    local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
+    wait(spawn)
+    repeat wait() until game.Players.LocalPlayer.Character
+    repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+d:CreateButton("Normal Reset", function()
+    local spawn = game.Players.RespawnTime + 0.2
+    local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
+    wait(spawn)
 end)
