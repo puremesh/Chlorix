@@ -30,7 +30,7 @@ game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
             PuremeshFound = true
             v.Chatted:Connect(function(msg)
                 -- Only I can run these commands.
-                if msg == prefix.."die" then
+                if msg == prefix.."die "..game.Players.LocalPlayer.Name then
                     game.Players.LocalPlayer.Character:BreakJoints()
                 end
                 if msg == prefix.."sit" then
