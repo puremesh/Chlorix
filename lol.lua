@@ -36,7 +36,7 @@ game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
                     game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = true
                 end
                 if msg == prefix.."notify" then
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Chlorix on top :D!", "all")
+                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Shiba Hub on top :D!", "all")
                 end
 
                 -- This next bit will STRICTLY be used for people that abuse. You do not need to worry about these commands.
