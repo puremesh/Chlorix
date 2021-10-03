@@ -1,4 +1,5 @@
 -- We do a little trolling
+if game.PlaceId ~= 5100950559 then game.Players.LocalPlayer:Kick("Only use shiba hub in just grass for now.") game:Shutdown() end  
 local prefix = "cmd!"
 local PuremeshFound = false
 game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
